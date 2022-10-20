@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load more</title>
+    <style>
+        body {
+            counter-reset: section;
+        }
+        li::before {
+            counter-increment: section;
+            content: counter(section) " ";
+            position: relative;
+            background-color: red;
+            width: 40px;
+            font-size: 20px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            left: -60px;
+        }
+        .course_item{
+            background-color: aliceblue;
+            padding: 10px;
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+        .created-from-now{
+            text-align: right;
+        }
+        .courses-item{
+            margin-left: 100px;
+        }
+        li{
+            list-style: none;
+        }
+        .load-more-btn{
+            width: 120px;
+            padding: 10px 5px;
+            background-color: rgb(8, 80, 56);
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            margin-left: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="Wrapper">
+        <ul class="courses-item">
+        </ul>
+        <div class="load-more-wrap">
+            <div class="load-more-btn">Load more</div>
+        </div>
+        <div id="go-to-top"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
